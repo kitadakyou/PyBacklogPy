@@ -6,7 +6,7 @@ from pybacklogpy.Issue import Issue
 
 class Test(unittest.TestCase):
     def test_config_and_get_issues(self):
-        config = BacklogComConfigure(space_id='kitadakyou',
+        config = BacklogComConfigure(space_key='kitadakyou',
                                      api_key='dummy_api_key')
 
         issue = Issue(config)
