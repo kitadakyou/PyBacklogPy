@@ -1,5 +1,7 @@
 # PyBacklogPy
 
+[![CircleCI](https://circleci.com/gh/kitadakyou/PyBacklogPy/tree/master.svg?style=svg)](https://circleci.com/gh/kitadakyou/PyBacklogPy/tree/master)
+
 ## これは何？
 
 [BacklogAPI](https://developer.nulab.com/ja/docs/backlog/) を Python から簡単に呼べるようにラップしたものです。
