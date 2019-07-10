@@ -1,0 +1,19 @@
+.. PyBacklog documentation master file, created by
+   sphinx-quickstart on Sat Jun 22 19:51:59 2019.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Welcome to PyBacklogPy!
+=====================================
+
+.. toctree::
+   :maxdepth: 4
+   :caption: Contents:
+
+
+
+User's Guide
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`

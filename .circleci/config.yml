@@ -1,0 +1,28 @@
+version: 2.1
+jobs:
+  build:
+    working_directory: ~/circleci-test
+    docker:
+      - image: circleci/python:3.7.3
+    steps:
+      - checkout
+      - run:
+          command: |
+            sudo chown -R circleci:circleci /usr/local/bin
+            sudo chown -R circleci:circleci /usr/local/lib/python3.7/site-packages
+            pip install -r requirements.txt
+            pip install unittest-xml-reporting
+            pip install coverage==5.0a5
+      - run:
+          command: |
+            echo "[backlog]" > secrets
+            echo "Host = $BACKLOG_HOST" >> secrets
+            echo "ApiKey = $BACKLOG_API_KEY" >> secrets
+            sed -i -e 's/dummy_api_key/$BACKLOG_API_KEY/' tests/test_configure.py
+      - run:
+          command: |
+            coverage run
+            coverage report
+            coverage html
+      - store_artifacts:
+          path: htmlcov

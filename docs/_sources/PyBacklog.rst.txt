@@ -1,0 +1,198 @@
+PyBacklog package
+=================
+
+Submodules
+----------
+
+PyBacklog.Attachment module
+---------------------------
+
+.. automodule:: PyBacklog.Attachment
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+PyBacklog.Category module
+-------------------------
+
+.. automodule:: PyBacklog.Category
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+PyBacklog.CustomField module
+----------------------------
+
+.. automodule:: PyBacklog.CustomField
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+PyBacklog.GitRepository module
+------------------------------
+
+.. automodule:: PyBacklog.GitRepository
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+PyBacklog.Issue module
+----------------------
+
+.. automodule:: PyBacklog.Issue
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+PyBacklog.Licence module
+------------------------
+
+.. automodule:: PyBacklog.Licence
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+PyBacklog.Notification module
+-----------------------------
+
+.. automodule:: PyBacklog.Notification
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+PyBacklog.Priority module
+-------------------------
+
+.. automodule:: PyBacklog.Priority
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+PyBacklog.Project module
+------------------------
+
+.. automodule:: PyBacklog.Project
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+PyBacklog.PullRequest module
+----------------------------
+
+.. automodule:: PyBacklog.PullRequest
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+PyBacklog.Resolution module
+---------------------------
+
+.. automodule:: PyBacklog.Resolution
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+PyBacklog.SharedFile module
+---------------------------
+
+.. automodule:: PyBacklog.SharedFile
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+PyBacklog.Space module
+----------------------
+
+.. automodule:: PyBacklog.Space
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+PyBacklog.Star module
+---------------------
+
+.. automodule:: PyBacklog.Star
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+PyBacklog.Status module
+-----------------------
+
+.. automodule:: PyBacklog.Status
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+PyBacklog.Team module
+---------------------
+
+.. automodule:: PyBacklog.Team
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+PyBacklog.User module
+---------------------
+
+.. automodule:: PyBacklog.User
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+PyBacklog.Version module
+------------------------
+
+.. automodule:: PyBacklog.Version
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+PyBacklog.Watch module
+----------------------
+
+.. automodule:: PyBacklog.Watch
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+PyBacklog.Webhook module
+------------------------
+
+.. automodule:: PyBacklog.Webhook
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+PyBacklog.Wiki module
+---------------------
+
+.. automodule:: PyBacklog.Wiki
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+PyBacklog.const module
+----------------------
+
+.. automodule:: PyBacklog.const
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+PyBacklog.modules module
+------------------------
+
+.. automodule:: PyBacklog.modules
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: PyBacklog
+   :members:
+   :undoc-members:
+   :show-inheritance:

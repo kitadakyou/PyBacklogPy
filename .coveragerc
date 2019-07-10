@@ -1,0 +1,5 @@
+[run]
+command_line = -m unittest discover -s ./tests
+[report]
+omit = */tests/*,*/venv/*
+precision = 1

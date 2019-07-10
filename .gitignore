@@ -1,0 +1,12 @@
+*/__pycache__/*
+.idea/
+venv/
+
+secrets
+
+build/
+dist/
+docs_src/
+htmlcov/
+pybacklogpy.egg-info/
+tests/skelton.py
