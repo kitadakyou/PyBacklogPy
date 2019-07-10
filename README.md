@@ -52,7 +52,7 @@ from pybacklogpy.BacklogConfigure import BacklogComConfigure
 from pybacklogpy.Issue import Issue
 
 # Configure クラスのインスタンスを生成
-config = BacklogComConfigure(space_id='kitadakyou',
+config = BacklogComConfigure(space_key='kitadakyou',
                              api_key='qwertyuiopasdfghjklzxcvbnmqazwsxedcrfvtgbyhnujmikolp')
 
 

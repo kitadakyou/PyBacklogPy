@@ -1,5 +1,5 @@
-PyBacklog
-=========
+PyBacklogPy
+===========
 
 .. toctree::
    :maxdepth: 4
