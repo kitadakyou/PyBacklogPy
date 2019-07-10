@@ -18,7 +18,7 @@ jobs:
             echo "[backlog]" > secrets
             echo "Host = $BACKLOG_HOST" >> secrets
             echo "ApiKey = $BACKLOG_API_KEY" >> secrets
-            sed -i -e 's/dummy_api_key/$BACKLOG_API_KEY/' tests/test_configure.py
+            sed -i -e "s/dummy_api_key/$BACKLOG_API_KEY/" tests/test_configure.py
       - run:
           command: |
             coverage run
