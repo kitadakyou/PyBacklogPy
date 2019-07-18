@@ -11,7 +11,7 @@ jobs:
             sudo chown -R circleci:circleci /usr/local/bin
             sudo chown -R circleci:circleci /usr/local/lib/python3.7/site-packages
             pip install -r requirements.txt
-            pip install unittest-xml-reporting
+            pip install unittest-xml-reporting==2.5.1
             pip install coverage==5.0a5
       - run:
           command: |
@@ -24,5 +24,7 @@ jobs:
             coverage run
             coverage report
             coverage html
+      - store_test_results:
+          path: result.xml
       - store_artifacts:
           path: htmlcov
