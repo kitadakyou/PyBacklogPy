@@ -61,8 +61,6 @@ config = BacklogComConfigure(space_key='kitadakyou',
 issue_api = Issue(config)  # API を呼ぶクラスのコンストラクタ引数として Configure クラスのインスタンスは使用可能 
 response = issue_api.get_issue_list()
 
-issue_api_2 = Issue()  # Configure クラスを渡さなかった場合は、次で紹介する設定ファイルの情報を読みに行く
-response_2 = issue_api_2.get_issue_list()
 
 ```
 
@@ -78,6 +76,19 @@ response_2 = issue_api_2.get_issue_list()
 Host = kitadakyou.backlog.com
 ApiKey = qwertyuiopasdfghjklzxcvbnmqazwsxedcrfvtgbyhnujmikolp
 ```
+
+`secrets` を指定した場合、先ほどの例で使用した configure クラスは省略して、以下のように書くことが出来ます
+
+```python
+from pybacklogpy.Issue import Issue
+
+
+issue_api_2 = Issue()  # Configure クラスを渡さなかった場合は、設定ファイルの情報を読みに行く
+response_2 = issue_api_2.get_issue_list()
+
+```
+
+なお、 `configure` クラスを渡さず、 `secrets` も設置していない場合は実行エラーとなります。
 
 ### モジュールを読み込み、インスタンス生成
 
