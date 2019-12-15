@@ -25,7 +25,7 @@ class Test(unittest.TestCase):
         response_list = response_to_json(response)
         self.assertIsInstance(response_list, list, msg='カスタム属性一覧の取得に失敗')
 
-    def test_add_custom_field(self):
+    def test_custom_field(self):
         from pybacklogpy.Licence import Licence
         l = Licence()
         if response_to_json(l.get_licence())['licenceTypeId'] == 11:
@@ -47,6 +47,24 @@ class Test(unittest.TestCase):
         self.assertTrue(response_list_field.ok, msg='単一リストカスタム属性の追加に失敗')
         list_field_id = response_to_json(response_list_field)['id']
 
+        response_update_list_field = self.custom_field.update_custom_field(
+            project_id_or_key=self.project_key,
+            custom_field_id=list_field_id,
+            items=[
+                '要素4',
+                '要素5',
+            ],
+            allow_input=False,
+            allow_add_item=False,
+        )
+        self.assertTrue(response_update_list_field.ok, msg='単一リストカスタム属性の更新に失敗')
+
+        response_delete_list_field = self.custom_field.delete_custom_field(
+            project_id_or_key=self.project_key,
+            custom_field_id=list_field_id,
+        )
+        self.assertTrue(response_delete_list_field.ok, msg='単一リストカスタム属性の削除に失敗')
+
         response_string_field = self.custom_field.add_custom_field(
             project_id_or_key=self.project_key,
             type_id=CUSTOM_FIELD_TYPE['文字列'],
@@ -54,6 +72,19 @@ class Test(unittest.TestCase):
         )
         self.assertTrue(response_string_field.ok, msg='文字列カスタム属性の追加に失敗')
         string_field_id = response_to_json(response_string_field)['id']
+
+        response_update_string_field = self.custom_field.update_custom_field(
+            project_id_or_key=self.project_key,
+            custom_field_id=string_field_id,
+            name='updated name',
+        )
+        self.assertTrue(response_update_string_field.ok, msg='文字列カスタム属性の更新に失敗')
+
+        response_delete_string_field = self.custom_field.delete_custom_field(
+            project_id_or_key=self.project_key,
+            custom_field_id=string_field_id,
+        )
+        self.assertTrue(response_delete_string_field.ok, msg='文字列カスタム属性の削除に失敗')
 
         response_number_filed = self.custom_field.add_custom_field(
             project_id_or_key=self.project_key,
@@ -67,6 +98,22 @@ class Test(unittest.TestCase):
         self.assertTrue(response_number_filed.ok, msg='数値カスタム属性の追加に失敗')
         number_field_id = response_to_json(response_number_filed)['id']
 
+        response_update_number_filed = self.custom_field.update_custom_field(
+            project_id_or_key=self.project_key,
+            custom_field_id=number_field_id,
+            min_num=1,
+            max_num=99,
+            initial_value=30,
+            unit='年月'
+        )
+        self.assertTrue(response_update_number_filed, msg='数値カスタム属性の更新に失敗')
+
+        response_delete_number_filed = self.custom_field.delete_custom_field(
+            project_id_or_key=self.project_key,
+            custom_field_id=number_field_id,
+        )
+        self.assertTrue(response_delete_number_filed.ok, msg='数値カスタム属性の削除に失敗')
+
         response_date_field = self.custom_field.add_custom_field(
             project_id_or_key=self.project_key,
             type_id=CUSTOM_FIELD_TYPE['日付'],
@@ -75,6 +122,21 @@ class Test(unittest.TestCase):
             max_date='2020-12-31',
         )
         self.assertTrue(response_date_field.ok, msg='日付カスタム属性の追加に失敗')
+        date_field_id = response_to_json(response_date_field)['id']
+
+        response_update_date_field = self.custom_field.update_custom_field(
+            project_id_or_key=self.project_key,
+            custom_field_id=date_field_id,
+            min_date='2017-01-01',
+            max_date='2019-12-31',
+        )
+        self.assertTrue(response_update_date_field.ok, msg='日付カスタム属性の更新に失敗')
+
+        response_delete_date_field = self.custom_field.delete_custom_field(
+            project_id_or_key=self.project_key,
+            custom_field_id=date_field_id,
+        )
+        self.assertTrue(response_delete_date_field.ok, msg='日付カスタム属性の削除に失敗')
 
 
 if __name__ == '__main__':
