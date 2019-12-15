@@ -117,14 +117,6 @@ class Test(unittest.TestCase):
         response_list = response_to_json(response_get)
         self.assertIsInstance(response_list, list, msg='Wikiページのスター一覧がリストオブジェクトではない')
 
-    def test_get_list_of_wiki_attachments(self):
-        wiki_id = get_wiki_id()
-        response_get = self.wiki_attachment.get_list_of_wiki_attachments(
-            wiki_id=wiki_id,
-        )
-        self.assertTrue(response_get.ok, msg='Wiki添付ファイル一覧の取得に失敗')
-        response_list = response_to_json(response_get)
-        self.assertIsInstance(response_list, list, msg='Wiki添付ファイル一覧の取得がリストでない')
 
     def test_attach_and_remove_file(self):
         from pybacklogpy.Licence import Licence
@@ -157,15 +149,23 @@ class Test(unittest.TestCase):
         self.assertEqual(attachments_num_before_post + 1, attachments_num_after_post,
                          msg='Wiki添付ファイルの追加後にファイル数が増えていない')
 
+        response_get = self.wiki_attachment.get_list_of_wiki_attachments(
+            wiki_id=wiki_id,
+        )
+        self.assertTrue(response_get.ok, msg='Wiki添付ファイル一覧の取得に失敗')
+        response_list = response_to_json(response_get)
+        self.assertIsInstance(response_list, list, msg='Wiki添付ファイル一覧の取得がリストでない')
+        wiki_attachment_id = response_list[0]['id']
+
         downloaded_file_path, response = self.wiki_attachment.get_wiki_page_attachment(
             wiki_id=wiki_id,
-            attachment_id=attachment_id,
+            attachment_id=wiki_attachment_id,
         )
         self.assertTrue(exists(downloaded_file_path), msg='ファイルのダウンロードに失敗')
 
         response_delete = self.wiki_attachment.remove_wiki_attachment(
             wiki_id=wiki_id,
-            attachment_id=attachment_id,
+            attachment_id=wiki_attachment_id,
         )
         self.assertTrue(response_delete.ok, msg='Wiki添付ファイルの削除に失敗')
 
