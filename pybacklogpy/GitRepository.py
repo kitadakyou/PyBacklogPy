@@ -4,6 +4,7 @@ from typing import Optional
 from pybacklogpy.BacklogConfigure import BacklogConfigure
 from pybacklogpy.modules import RequestSender
 
+
 class GitRepository:
     def __init__(self, config: Optional[BacklogConfigure] = None):
         self.base_path = 'projects'
