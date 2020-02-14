@@ -122,6 +122,7 @@ class Issue:
         if count is not None:
             if not 1 <= count <= 100:
                 raise ValueError('count(取得上限)は1-100の範囲で指定してください')
+            payloads['count'] = count
         if created_since is not None:
             payloads['createdSince'] = created_since
         if created_until is not None:
