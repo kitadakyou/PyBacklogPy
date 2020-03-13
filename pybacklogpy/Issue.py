@@ -515,7 +515,7 @@ class Issue:
         if comment is not None:
             payloads['comment'] = comment
         for key in kwargs:
-            if re.match('^custom_field_[0-9]+_other_value$|^custom_field_[0-9]+$', key) is None:
+            if re.match('^customField_[0-9]+_other_value$|^customField_[0-9]+$', key) is None:
                 raise ValueError('カスタム属性の指定方法が正しくありません')
             payloads[key] = kwargs[key]
 
