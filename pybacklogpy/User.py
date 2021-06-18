@@ -173,7 +173,7 @@ class User:
         :return: レスポンス
         """
 
-        path = self.base_path + '/{user_id}'.format(user_id=user_id)
+        path = self.base_path + '/{user_id}/stars'.format(user_id=user_id)
         payloads = {}
         if min_id is not None:
             payloads['minId'] = min_id
