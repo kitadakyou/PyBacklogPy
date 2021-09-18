@@ -260,7 +260,7 @@ class Project:
 
         path = self.base_path + '/{project_id_or_key}/administrators'.format(project_id_or_key=project_id_or_key)
 
-        return self.rs.send_delete_request(path=path, request_param={})
+        return self.rs.send_get_request(path=path, request_param={})
 
     def delete_project_user(self,
                             project_id_or_key: str,
