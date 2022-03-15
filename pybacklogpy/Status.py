@@ -11,6 +11,19 @@ class Status:
         _config = config if config else None
         self.rs = RequestSender(_config)
 
+    def get_status_list_of_project(self, project_id_or_key: str) -> Response:
+        """
+        プロジェクトの状態一覧の取得
+        https://developer.nulab.com/ja/docs/backlog/api/2/get-status-list-of-project/
+
+        :param project_id_or_key: プロジェクトのID または プロジェクトキー
+
+        :return: レスポンス
+        """
+
+        path = self.base_path + project_id_or_key + '/statuses'
+        return self.rs.send_get_request(path=path, url_param={})
+
     def add_status(self,
                    project_id_or_key: str,
                    name: str,
