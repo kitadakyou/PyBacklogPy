@@ -81,7 +81,7 @@ class Category:
         :return: レスポンス
         """
 
-        path = self.base_path + '/projects/{project_id_or_key}/categories/{category_id}'\
+        path = self.base_path + '/{project_id_or_key}/categories/{category_id}'\
             .format(project_id_or_key=project_id_or_key, category_id=category_id)
 
         return self.rs.send_delete_request(path=path, request_param={})
