@@ -2,4 +2,4 @@ coverage==5.0a5
 sphinx==2.1.2
 sphinx-rtd-theme==0.4.3
 twine==1.13.0
-wheel==0.33.4
+wheel==0.38.1
