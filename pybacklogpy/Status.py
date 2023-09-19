@@ -24,7 +24,7 @@ class Status:
         """
 
         path = self.base_path + '/{project_id_or_key}/statuses'.format(project_id_or_key=project_id_or_key)
-        return self.rs.send_post_request(path=path, url_param={})
+        return self.rs.send_get_request(path=path, url_param={})
     
     def add_status(self,
                    project_id_or_key: str,
